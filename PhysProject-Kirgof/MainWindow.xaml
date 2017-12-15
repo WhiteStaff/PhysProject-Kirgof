@@ -1,0 +1,131 @@
+﻿<Window
+    x:Class="PhysProject_Kirgof.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PhysProject_Kirgof"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:PhysProject_Kirgof.ViewModels"
+    Title="MainWindow"
+    Width="525"
+    Height="350"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    <Canvas>
+        <StackPanel
+            Canvas.Left="10"
+            Canvas.Top="10"
+            Width="210"
+            Height="41"
+            Orientation="Horizontal">
+            <Label
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Content="R1 = " />
+            <TextBox
+                Width="54"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Text="{Binding First.Value}"
+                TextAlignment="Center" />
+            <CheckBox
+                VerticalAlignment="Center"
+                Content="IsEnable"
+                IsChecked="{Binding First.IsEnable}" />
+        </StackPanel>
+        <StackPanel
+            Canvas.Left="10"
+            Canvas.Top="51"
+            Width="210"
+            Height="41"
+            Orientation="Horizontal">
+            <Label
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Content="R2 = " />
+            <TextBox
+                Width="54"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Text="{Binding Second.Value}"
+                TextAlignment="Center" />
+            <CheckBox
+                VerticalAlignment="Center"
+                Content="IsEnable"
+                IsChecked="{Binding Second.IsEnable}" />
+        </StackPanel>
+        <StackPanel
+            Canvas.Left="10"
+            Canvas.Top="92"
+            Width="210"
+            Height="41"
+            Orientation="Horizontal">
+            <Label
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Content="R3 = " />
+            <TextBox
+                Width="54"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Text="{Binding Third.Value}"
+                TextAlignment="Center" />
+            <CheckBox
+                VerticalAlignment="Center"
+                Content="IsEnable"
+                IsChecked="{Binding Third.IsEnable}" />
+        </StackPanel>
+        <Button
+            Canvas.Left="316"
+            Canvas.Top="61"
+            Width="75"
+            Command="{Binding Test}"
+            Content="Sum" />
+        <TextBlock
+            Canvas.Left="316"
+            Canvas.Top="35"
+            Text="{Binding Result}"
+            TextWrapping="Wrap" />
+        <TextBlock
+            Canvas.Left="346"
+            Canvas.Top="35"
+            Text="{Binding ElementResult}"
+            TextWrapping="Wrap" />
+        <StackPanel 
+            Canvas.Left="10"
+            Canvas.Top="133"
+            Width="210"
+            Height="41"
+            Orientation="Horizontal">
+            <Label
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Content="E1 = " />
+            <TextBox
+                Width="54"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Text="{Binding FirstElement.Value}"
+                TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel 
+            Canvas.Left="10"
+            Canvas.Top="174"
+            Width="210"
+            Height="41"
+            Orientation="Horizontal">
+            <Label
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Content="E2 = " />
+            <TextBox
+                Width="54"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Text="{Binding SecondElement.Value}"
+                TextAlignment="Center" />
+        </StackPanel>
+    </Canvas>
+</Window>

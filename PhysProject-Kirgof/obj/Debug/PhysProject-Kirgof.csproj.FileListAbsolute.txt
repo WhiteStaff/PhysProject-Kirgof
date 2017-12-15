@@ -1,0 +1,16 @@
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\bin\Debug\PhysProject-Kirgof.exe.config
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\bin\Debug\PhysProject-Kirgof.exe
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\bin\Debug\PhysProject-Kirgof.pdb
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof.csprojResolveAssemblyReference.cache
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\MainWindow.g.cs
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\App.g.cs
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof_MarkupCompile.cache
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof_MarkupCompile.lref
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\MainWindow.baml
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof.g.resources
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject_Kirgof.Properties.Resources.resources
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof.csproj.GenerateResource.Cache
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof.csproj.CoreCompileInputs.cache
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof.exe
+C:\Users\Саша\YandexDisk\2 курс\Физика\PhysProject_Kirchhoff-master\PhysProject-Kirgof\obj\Debug\PhysProject-Kirgof.pdb
