@@ -9,8 +9,8 @@ namespace PhysProject_Kirgof.Models
     {
         public event EventHandler OnStateChanged;
 
-        private int _value;
-        public int Value
+        private float _value;
+        public float Value
         {
             get => _value;
             set
@@ -30,7 +30,7 @@ namespace PhysProject_Kirgof.Models
                 _isEnable = value;
                 OnPropertyChanged(nameof(IsEnable));
                 OnStateChanged?.Invoke(this, EventArgs.Empty);
-            }
+            }             
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

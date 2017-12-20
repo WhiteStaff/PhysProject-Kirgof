@@ -14,6 +14,8 @@ namespace PhysProject_Kirgof.Models
         public event EventHandler OnStateChanged;
 
         private int _value;
+        private object set;
+
         public int Value
         {
             get => _value;
@@ -24,6 +26,7 @@ namespace PhysProject_Kirgof.Models
                 OnStateChanged?.Invoke(this, EventArgs.Empty);
             }
         }
+
        
         public event PropertyChangedEventHandler PropertyChanged;
 

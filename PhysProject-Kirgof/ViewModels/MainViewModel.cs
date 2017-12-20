@@ -4,12 +4,15 @@ using System.Windows.Input;
 using PhysProject_Kirgof.Annotations;
 using PhysProject_Kirgof.Models;
 using PhysProject_Kirgof.Tools;
+using System.Windows.Shapes;
+using System.Windows.Controls;
+using System;
 
 namespace PhysProject_Kirgof.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private int _res;
+        private double _res1, _res2, _res3;
 
         public MainViewModel()
         {
@@ -44,41 +47,86 @@ namespace PhysProject_Kirgof.ViewModels
         public ResistorModel Second { get; set; }
         public ResistorModel Third { get; set; }
 
-        public int Result
+        public double I1
         {
-            get => _res;
+            get => Math.Round(_res1, 3);
             set
             {
-                _res = value;
-                OnPropertyChanged(nameof(Result));
+                _res1 = value;
+                OnPropertyChanged(nameof(I1));
             }
         }
 
-        public int ElementResult
+        public double I2
         {
-            get => _res;
+            get => Math.Round(_res2, 3);
             set
             {
-                _res = value;
-                OnPropertyChanged(nameof(ElementResult));
+                _res2 = value;
+                OnPropertyChanged(nameof(I2));
             }
         }
 
+        public double I3
+        {
+            get => Math.Round(_res3, 3);
+            set
+            {
+                _res3 = value;
+                OnPropertyChanged(nameof(I3));
+            }
+        }
+     
         public ICommand Test
         {
             get
             {
                 return new ActionCommand(() =>
                 {
-                    var res = 0;
-                    if (First.IsEnable) res += First.Value;
-                    if (Second.IsEnable) res += Second.Value;
-                    if (Third.IsEnable) res += Third.Value;
-                    Result = res;
-                    res = 0;
-                    res += FirstElement.Value;
-                    res += SecondElement.Value;
-                    ElementResult = res;
+                    //var res = 0;
+                    if ((First.IsEnable) && (Second.IsEnable) && (Third.IsEnable))
+                    {
+                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
+                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
+                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
+                    }
+
+                    if ((First.IsEnable) && (!Second.IsEnable) && (Third.IsEnable))
+                    {
+                        Second.Value = 0.000000001F;
+                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
+                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
+                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
+                    }
+
+                    if ((!First.IsEnable) && (Second.IsEnable) && (Third.IsEnable))
+                    {
+                        First.Value = 0;
+                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
+                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
+                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
+                    }
+
+                    if ((!First.IsEnable) && (!Second.IsEnable) && (Third.IsEnable))
+                    {
+                        First.Value = 0;
+                        Second.Value = 0;
+                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
+                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
+                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
+                    }
+
+                    if ((!First.IsEnable) && (!Second.IsEnable) && (!Third.IsEnable))
+                    {
+                        First.Value = 0;
+                        Second.Value = 0;
+                        Third.Value = 0;
+                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
+                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
+                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
+                    }
+
+
                 });
             }
         }

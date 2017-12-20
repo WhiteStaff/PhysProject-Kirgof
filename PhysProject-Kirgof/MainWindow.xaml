@@ -13,7 +13,7 @@
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
-    <Canvas>
+    <Canvas Name="myCanvas">
         <StackPanel
             Canvas.Left="10"
             Canvas.Top="10"
@@ -25,6 +25,7 @@
                 VerticalContentAlignment="Center"
                 Content="R1 = " />
             <TextBox
+                Name="R1"
                 Width="54"
                 Margin="5"
                 VerticalContentAlignment="Center"
@@ -33,28 +34,7 @@
             <CheckBox
                 VerticalAlignment="Center"
                 Content="IsEnable"
-                IsChecked="{Binding First.IsEnable}" />
-        </StackPanel>
-        <StackPanel
-            Canvas.Left="10"
-            Canvas.Top="51"
-            Width="210"
-            Height="41"
-            Orientation="Horizontal">
-            <Label
-                Margin="5"
-                VerticalContentAlignment="Center"
-                Content="R2 = " />
-            <TextBox
-                Width="54"
-                Margin="5"
-                VerticalContentAlignment="Center"
-                Text="{Binding Second.Value}"
-                TextAlignment="Center" />
-            <CheckBox
-                VerticalAlignment="Center"
-                Content="IsEnable"
-                IsChecked="{Binding Second.IsEnable}" />
+                IsChecked="{Binding First.IsEnable}" Checked="CheckBoxR1_Checked" Unchecked="CheckBoxR1_UnChecked"/>
         </StackPanel>
         <StackPanel
             Canvas.Left="10"
@@ -67,6 +47,7 @@
                 VerticalContentAlignment="Center"
                 Content="R3 = " />
             <TextBox
+                Name="R3"
                 Width="54"
                 Margin="5"
                 VerticalContentAlignment="Center"
@@ -75,23 +56,46 @@
             <CheckBox
                 VerticalAlignment="Center"
                 Content="IsEnable"
-                IsChecked="{Binding Third.IsEnable}" />
+                IsChecked="{Binding Third.IsEnable}" Checked="CheckBoxR3_Checked" Unchecked ="CheckBoxR3_UnChecked"/>
+        </StackPanel>
+        <StackPanel
+            Canvas.Left="10"
+            Canvas.Top="51"
+            Width="210"
+            Height="41"
+            Orientation="Horizontal">
+            <Label
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Content="R2 = " />
+            <TextBox
+                Name="R2"
+                Width="54"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Text="{Binding Second.Value}"
+                TextAlignment="Center" />
+            <CheckBox
+                VerticalAlignment="Center"
+                Content="IsEnable"
+                IsChecked="{Binding Second.IsEnable}" Checked="CheckBoxR2_Checked" Unchecked="CheckBoxR2_UnChecked" Margin="0,12,0,13"/>
         </StackPanel>
         <Button
-            Canvas.Left="316"
-            Canvas.Top="61"
+            Canvas.Left="392"
+            Canvas.Top="108"
             Width="75"
             Command="{Binding Test}"
-            Content="Sum" />
+            Content="Calculate" />
+
         <TextBlock
-            Canvas.Left="316"
-            Canvas.Top="35"
-            Text="{Binding Result}"
+            Canvas.Left="418"
+            Canvas.Top="61"
+            Text="{Binding I2}"
             TextWrapping="Wrap" />
         <TextBlock
-            Canvas.Left="346"
-            Canvas.Top="35"
-            Text="{Binding ElementResult}"
+            Canvas.Left="418"
+            Canvas.Top="85"
+            Text="{Binding I3}"
             TextWrapping="Wrap" />
         <StackPanel 
             Canvas.Left="10"
@@ -127,5 +131,160 @@
                 Text="{Binding SecondElement.Value}"
                 TextAlignment="Center" />
         </StackPanel>
+        <Line
+            X1="230" Y1="150"
+            X2="230" Y2="250"
+            Stroke="Black"
+        />
+        <Line
+            X1="230" Y1="250"
+            X2="260" Y2="250"
+            Stroke="Black"
+        />
+        <Line
+            X1="260" Y1="240"
+            X2="260" Y2="260"
+            Stroke="Black"
+        />
+        <Line
+            X1="265" Y1="230"
+            X2="265" Y2="270"
+            Stroke="Black"
+        />
+        <Line
+            X1="266" Y1="250"
+            X2="300" Y2="250"
+            Stroke="Black"
+        />
+        <Line
+            X1="230" Y1="150"
+            X2="245" Y2="150"
+            Stroke="Black"
+        />
+        <Line
+            X1="285" Y1="150"
+            X2="335" Y2="150"
+            Stroke="Black"
+        />
+        <Line
+            X1="335" Y1="140"
+            X2="335" Y2="160"
+            Stroke="Black"
+        />
+        <Line
+            X1="340" Y1="130"
+            X2="340" Y2="170"
+            Stroke="Black"
+        />
+        <Line
+            X1="340" Y1="150"
+            X2="370" Y2="150"
+            Stroke="Black"
+        />
+        <Line
+            X1="300" Y1="150"
+            X2="300" Y2="180"
+            Stroke="Black"
+        />
+        <Line
+            X1="300" Y1="220"
+            X2="300" Y2="250"
+            Stroke="Black"
+        />
+        <Line
+            X1="370" Y1="150"
+            X2="370" Y2="250"
+            Stroke="Black"
+        />
+        <Line
+            X1="300" Y1="250"
+            X2="315" Y2="250"
+            Stroke="Black"
+        />
+        <Line
+            X1="355" Y1="250"
+            X2="370" Y2="250"
+            Stroke="Black"
+        />
+        <Label x:Name="label1" Content="R1" Height="26" Canvas.Left="250" Canvas.Top="115" Width="28"/>
+        <Label x:Name="label2" Content="R2" Height="27" Canvas.Left="326" Canvas.Top="255" Width="26"/>
+        <Label x:Name="label" Content="R3" Height="24" Canvas.Left="308" Canvas.Top="186" Width="28"/>
+        <Label x:Name="label3" Content="E1" Height="23" Canvas.Left="250" Canvas.Top="270" Width="28"/>
+        <Label x:Name="label5" Content="E2" Height="26" Canvas.Left="326" Canvas.Top="108" Width="22"/>
+
+        <StackPanel
+            Canvas.Left="360"
+            Canvas.Top="36"
+            Width="80"
+            Height="25"
+            Orientation="Horizontal">
+            <TextBlock 
+                FontSize="14"
+                Name="label4"
+                Text="I1 =" 
+                Height="25"
+                Canvas.Left="386" 
+                Canvas.Top="32" 
+                
+                Width="28"/>
+            <TextBlock
+                Name="ResI1"
+                FontSize="15"
+                InkCanvas.Top="2"
+                Text="{Binding I1}"
+                TextWrapping="Wrap" Width="84" />
+
+        </StackPanel>
+
+        <Label x:Name="label6" Content="I2 =" Height="26" Canvas.Left="386" Canvas.Top="56" Width="32"/>
+        <Label x:Name="label7" Content="I3 =" Height="26" Canvas.Left="386" Canvas.Top="80" Width="32"/>
+        <Line
+            X1="250" Y1="165"
+            X2="280" Y2="165"
+            Stroke="Black"            
+         />
+        <Line
+            X1="250" Y1="165"
+            X2="255" Y2="163"
+            Stroke="Black"            
+         />
+        <Line
+            X1="250" Y1="165"
+            X2="255" Y2="167"
+            Stroke="Black"            
+         />
+        <Label x:Name="I1" Content="I1" Height="26" Canvas.Left="255" Canvas.Top="160" Width="28"/>
+        <Line
+            X1="285" Y1="185"
+            X2="285" Y2="215"
+            Stroke="Black"            
+         />
+        <Line
+            X1="285" Y1="185"
+            X2="287" Y2="190"
+            Stroke="Black"            
+         />
+        <Line
+            X1="285" Y1="185"
+            X2="283" Y2="190"
+            Stroke="Black"            
+         />
+        <Label x:Name="I3" Content="I3" Height="26" Canvas.Left="267" Canvas.Top="185" Width="28"/>
+        <Line
+            X1="320" Y1="235"
+            X2="350" Y2="235"
+            Stroke="Black"            
+         />
+        <Line
+            X1="320" Y1="235"
+            X2="325" Y2="233"
+            Stroke="Black"            
+         />
+        <Line
+            X1="320" Y1="235"
+            X2="325" Y2="237"
+            Stroke="Black"            
+         />
+        <Label x:Name="I2" Content="I2" Height="26" Canvas.Left="325" Canvas.Top="213" Width="28"/>
     </Canvas>
 </Window>
