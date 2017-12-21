@@ -93,48 +93,11 @@ namespace PhysProject_Kirgof.ViewModels
             {
                 return new ActionCommand(() =>
                 {
-                    if ((First.IsEnable) && (Second.IsEnable) && (Third.IsEnable))
-                    {
-                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
-                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
-                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
-                    }
 
-                    if ((First.IsEnable) && (!Second.IsEnable) && (Third.IsEnable))
-                    {
-                        Second.Value = 0.000000001F;
-                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
-                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
-                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
-                        I3 = I1 + I2;
-                    }
+                    I1 = Maths.ResultI1(First, Second, Third, FirstElement, SecondElement);
+                    I2 = Maths.ResultI2(First, Second, Third, FirstElement, SecondElement);
+                    I3 = Maths.ResultI3(First, Second, Third, FirstElement, SecondElement);
 
-                    if ((!First.IsEnable) && (Second.IsEnable) && (Third.IsEnable))
-                    {
-                        First.Value = 0;
-                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
-                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
-                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
-                    }
-
-                    if ((!First.IsEnable) && (!Second.IsEnable) && (Third.IsEnable))
-                    {
-                        First.Value = 0;
-                        Second.Value = 0;
-                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
-                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
-                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
-                    }
-
-                    if ((!First.IsEnable) && (!Second.IsEnable) && (!Third.IsEnable))
-                    {
-                        First.Value = 0;
-                        Second.Value = 0;
-                        Third.Value = 0;
-                        I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
-                        I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
-                        I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
-                    } 
                 });
             }
         }

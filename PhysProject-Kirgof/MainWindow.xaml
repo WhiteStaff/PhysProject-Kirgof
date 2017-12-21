@@ -329,8 +329,8 @@
             Content="I2" />
         <TextBlock
             Name="ErrorLabel"
-            Canvas.Left="13"
-            Canvas.Top="230"
+            Canvas.Left="245"
+            Canvas.Top="20"
             Width="242"
             Height="83"
             FontSize="28"
