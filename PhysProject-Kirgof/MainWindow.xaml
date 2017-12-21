@@ -94,16 +94,55 @@
             Command="{Binding Test}"
             Content="Calculate" />
 
-        <TextBlock
-            Canvas.Left="418"
-            Canvas.Top="61"
-            Text="{Binding Data1}"
-            TextWrapping="Wrap" />
-        <TextBlock
-            Canvas.Left="418"
-            Canvas.Top="85"
-            Text="{Binding Data1}"
-            TextWrapping="Wrap" />
+        <StackPanel
+            Name="StackI2"
+            Canvas.Left="360"
+            Canvas.Top="56"
+            Width="160"
+            Height="25"
+            Orientation="Horizontal">
+            <TextBlock
+                Name="I2res"
+                Canvas.Left="386"
+                Canvas.Top="32"
+                Width="28"
+                Height="25"
+                FontSize="14"
+                Text="I2 =" />
+            <TextBlock
+                Name="ResI2"
+                Width="84"
+                FontSize="15"
+                InkCanvas.Top="2"
+                Text="{Binding Data2}"
+                TextWrapping="Wrap" />
+        </StackPanel>
+
+        <StackPanel
+            Name="StackI3"
+            Canvas.Left="360"
+            Canvas.Top="76"
+            Width="160"
+            Height="25"
+            Orientation="Horizontal">
+            <TextBlock
+                Name="I3res"
+                Canvas.Left="386"
+                Canvas.Top="32"
+                Width="28"
+                Height="25"
+                FontSize="14"
+                Text="I3 =" />
+            <TextBlock
+                Name="ResI3"
+                Width="84"
+                FontSize="15"
+                InkCanvas.Top="2"
+                Text="{Binding Data3}"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+
         <StackPanel
             Canvas.Left="10"
             Canvas.Top="133"
@@ -265,9 +304,10 @@
             Content="E2" />
 
         <StackPanel
+            Name="StackI1"
             Canvas.Left="360"
             Canvas.Top="36"
-            Width="80"
+            Width="150"
             Height="25"
             Orientation="Horizontal">
             <TextBlock
@@ -288,20 +328,7 @@
 
         </StackPanel>
 
-        <Label
-            x:Name="label6"
-            Canvas.Left="386"
-            Canvas.Top="56"
-            Width="32"
-            Height="26"
-            Content="I2 =" />
-        <Label
-            x:Name="label7"
-            Canvas.Left="386"
-            Canvas.Top="80"
-            Width="32"
-            Height="26"
-            Content="I3 =" />
+
         <Line
             Stroke="Black"
             X1="250"
@@ -377,5 +404,15 @@
             Width="28"
             Height="26"
             Content="I2" />
+        <TextBlock 
+            Canvas.Left="225" 
+            TextWrapping="Wrap" 
+            TextAlignment="Center"
+            FontSize="28"
+            Foreground="Red"
+            Text="ЗАМЫКАНИЕ, АЙАЙАЙ!" 
+            Canvas.Top="25" 
+            Height="83" 
+            Width="242"/>
     </Canvas>
 </Window>
