@@ -405,6 +405,7 @@
             Height="26"
             Content="I2" />
         <TextBlock 
+            Visibility="Hidden"
             Canvas.Left="225" 
             TextWrapping="Wrap" 
             TextAlignment="Center"

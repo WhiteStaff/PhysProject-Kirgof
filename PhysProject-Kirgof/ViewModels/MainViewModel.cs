@@ -92,7 +92,6 @@ namespace PhysProject_Kirgof.ViewModels
             {
                 return new ActionCommand(() =>
                 {
-                    //var res = 0;
                     if ((First.IsEnable) && (Second.IsEnable) && (Third.IsEnable))
                     {
                         I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
@@ -106,6 +105,7 @@ namespace PhysProject_Kirgof.ViewModels
                         I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
                         I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
                         I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
+                        I3 = I1 + I2;
                     }
 
                     if ((!First.IsEnable) && (Second.IsEnable) && (Third.IsEnable))
@@ -133,9 +133,7 @@ namespace PhysProject_Kirgof.ViewModels
                         I3 = (Second.Value * FirstElement.Value + SecondElement.Value * First.Value) / (First.Value * Second.Value + Third.Value * First.Value + Second.Value * Third.Value);
                         I1 = (FirstElement.Value - Third.Value * I3) / First.Value;
                         I2 = (SecondElement.Value - Third.Value * I3) / Second.Value;
-                    }
-
-
+                    } 
                 });
             }
         }
