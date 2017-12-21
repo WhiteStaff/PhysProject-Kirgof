@@ -30,10 +30,15 @@
             <TextBox
                 Name="R1"
                 Width="54"
-                Margin="5"
+                Margin="-7,5"
                 VerticalContentAlignment="Center"
                 Text="{Binding First.Value}"
                 TextAlignment="Center" />
+            <Label
+                Content="Ом  "
+                VerticalContentAlignment="Center"
+                Margin="5,0,0,0"
+                />
             <CheckBox
                 VerticalAlignment="Center"
                 Checked="CheckBoxR1_Checked"
@@ -54,16 +59,24 @@
             <TextBox
                 Name="R3"
                 Width="54"
-                Margin="5"
+                Margin="-7,5"
                 VerticalContentAlignment="Center"
                 Text="{Binding Third.Value}"
                 TextAlignment="Center" />
+            <Label
+                Content="Ом  "
+                VerticalContentAlignment="Center"
+                Margin="5,0,0,0"
+                />
             <CheckBox
-                VerticalAlignment="Center"
+                InkCanvas.Left="130"
                 Checked="CheckBoxR3_Checked"
                 Content="IsEnable"
                 IsChecked="{Binding Third.IsEnable}"
-                Unchecked="CheckBoxR3_UnChecked" />
+                Unchecked="CheckBoxR3_UnChecked" 
+                Margin="0,12,0,0" 
+                Height="16" 
+                VerticalAlignment="Top" />
         </StackPanel>
         <StackPanel
             Canvas.Left="10"
@@ -78,10 +91,15 @@
             <TextBox
                 Name="R2"
                 Width="54"
-                Margin="5"
+                Margin="-7,5"
                 VerticalContentAlignment="Center"
                 Text="{Binding Second.Value}"
                 TextAlignment="Center" />
+            <Label
+                Content="Ом  "
+                VerticalContentAlignment="Center"
+                Margin="5,0,0,0"
+                />
             <CheckBox
                 Margin="0,12,0,13"
                 VerticalAlignment="Center"
@@ -103,10 +121,15 @@
                 Content="E1 = " />
             <TextBox
                 Width="54"
-                Margin="5"
+                Margin="-7,5"
                 VerticalContentAlignment="Center"
                 Text="{Binding FirstElement.Value}"
                 TextAlignment="Center" />
+            <Label
+                Content="B  "
+                VerticalContentAlignment="Center"
+                Margin="5,0,0,0"
+                />
         </StackPanel>
         <StackPanel
             Canvas.Left="10"
@@ -120,10 +143,15 @@
                 Content="E2 = " />
             <TextBox
                 Width="54"
-                Margin="5"
+                Margin="-7,5"
                 VerticalContentAlignment="Center"
                 Text="{Binding SecondElement.Value}"
                 TextAlignment="Center" />
+            <Label
+                Content="B  "
+                VerticalContentAlignment="Center"
+                Margin="5,0,0,0"
+                />
         </StackPanel>
         <Line
             Stroke="Black"
