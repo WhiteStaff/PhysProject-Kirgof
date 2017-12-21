@@ -10,6 +10,9 @@
     Width="525"
     Height="350"
     mc:Ignorable="d">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Window.Resources>
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
@@ -86,61 +89,6 @@
                 Content="IsEnable"
                 IsChecked="{Binding Second.IsEnable}"
                 Unchecked="CheckBoxR2_UnChecked" />
-        </StackPanel>
-        <Button
-            Canvas.Left="392"
-            Canvas.Top="108"
-            Width="75"
-            Command="{Binding Test}"
-            Content="Calculate" />
-
-        <StackPanel
-            Name="StackI2"
-            Canvas.Left="360"
-            Canvas.Top="56"
-            Width="160"
-            Height="25"
-            Orientation="Horizontal">
-            <TextBlock
-                Name="I2res"
-                Canvas.Left="386"
-                Canvas.Top="32"
-                Width="28"
-                Height="25"
-                FontSize="14"
-                Text="I2 =" />
-            <TextBlock
-                Name="ResI2"
-                Width="84"
-                FontSize="15"
-                InkCanvas.Top="2"
-                Text="{Binding Data2}"
-                TextWrapping="Wrap" />
-        </StackPanel>
-
-        <StackPanel
-            Name="StackI3"
-            Canvas.Left="360"
-            Canvas.Top="76"
-            Width="160"
-            Height="25"
-            Orientation="Horizontal">
-            <TextBlock
-                Name="I3res"
-                Canvas.Left="386"
-                Canvas.Top="32"
-                Width="28"
-                Height="25"
-                FontSize="14"
-                Text="I3 =" />
-            <TextBlock
-                Name="ResI3"
-                Width="84"
-                FontSize="15"
-                InkCanvas.Top="2"
-                Text="{Binding Data3}"
-                TextWrapping="Wrap" />
-
         </StackPanel>
 
         <StackPanel
@@ -303,31 +251,6 @@
             Height="26"
             Content="E2" />
 
-        <StackPanel
-            Name="StackI1"
-            Canvas.Left="360"
-            Canvas.Top="36"
-            Width="150"
-            Height="25"
-            Orientation="Horizontal">
-            <TextBlock
-                Name="label4"
-                Canvas.Left="386"
-                Canvas.Top="32"
-                Width="28"
-                Height="25"
-                FontSize="14"
-                Text="I1 =" />
-            <TextBlock
-                Name="ResI1"
-                Width="84"
-                FontSize="15"
-                InkCanvas.Top="2"
-                Text="{Binding Data1}"
-                TextWrapping="Wrap" />
-
-        </StackPanel>
-
 
         <Line
             Stroke="Black"
@@ -404,16 +327,42 @@
             Width="28"
             Height="26"
             Content="I2" />
-        <TextBlock 
-            Visibility="Hidden"
-            Canvas.Left="225" 
-            TextWrapping="Wrap" 
-            TextAlignment="Center"
+        <TextBlock
+            Name="ErrorLabel"
+            Canvas.Left="13"
+            Canvas.Top="230"
+            Width="242"
+            Height="83"
             FontSize="28"
             Foreground="Red"
-            Text="ЗАМЫКАНИЕ, АЙАЙАЙ!" 
-            Canvas.Top="25" 
-            Height="83" 
-            Width="242"/>
+            Text="ЗАМЫКАНИЕ, АЙАЙАЙ!"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <StackPanel
+            Name="ResultPanel"
+            Canvas.Left="344"
+            Canvas.Top="9"
+            Width="157"
+            Height="100">
+            <TextBlock
+                Height="25"
+                FontSize="15"
+                Text="{Binding Data1}"
+                TextAlignment="Center" />
+            <TextBlock
+                Height="25"
+                FontSize="15"
+                Text="{Binding Data2}"
+                TextAlignment="Center" />
+            <TextBlock
+                Height="25"
+                FontSize="15"
+                Text="{Binding Data3}"
+                TextAlignment="Center" />
+            <Button
+                Margin="15,0"
+                Command="{Binding Test}"
+                Content="Calculate" />
+        </StackPanel>
     </Canvas>
 </Window>

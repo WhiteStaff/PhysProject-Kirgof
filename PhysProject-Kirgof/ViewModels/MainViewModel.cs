@@ -47,9 +47,10 @@ namespace PhysProject_Kirgof.ViewModels
         public ResistorModel Second { get; set; }
         public ResistorModel Third { get; set; }
 
-        public string Data1 => $"{I1} A";
-        public string Data2 => $"{I2} A";
-        public string Data3 => $"{I3} A";
+        public string Data1 => $"I1 = {I1} A";
+        public string Data2 => $"I2 = {I2} A";
+        public string Data3 => $"I3 = {I3} A";
+
 
         public double I1
         {
@@ -139,6 +140,7 @@ namespace PhysProject_Kirgof.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

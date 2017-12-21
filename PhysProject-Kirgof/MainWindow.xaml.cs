@@ -178,7 +178,7 @@ namespace PhysProject_Kirgof
             myCanvas.Children.Add(myLineR3yes2);
             myCanvas.Children.Add(myLineR3yes3);
             myCanvas.Children.Add(myLineR3yes4);
-
+            Update();
         }
 
         private void CheckBoxR1_Checked(object sender, RoutedEventArgs e)
@@ -190,6 +190,8 @@ namespace PhysProject_Kirgof
             myLineR1yes4.Visibility = Visibility.Visible;
             if (label1 != null) label1.Visibility = Visibility.Visible;
             R1.IsEnabled = true;
+            Update();
+
         }
 
         private void CheckBoxR1_UnChecked(object sender, RoutedEventArgs e)
@@ -201,6 +203,8 @@ namespace PhysProject_Kirgof
             myLineR1yes4.Visibility = Visibility.Hidden;
             if (label1 != null) label1.Visibility = Visibility.Hidden;
             R1.IsEnabled = false;
+            Update();
+
         }
 
         private void CheckBoxR2_Checked(object sender, RoutedEventArgs e)
@@ -212,6 +216,8 @@ namespace PhysProject_Kirgof
             myLineR2yes4.Visibility = Visibility.Visible;
             if (label2 != null) label2.Visibility = Visibility.Visible;
             R2.IsEnabled = true;
+            Update();
+
         }
 
         private void CheckBoxR2_UnChecked(object sender, RoutedEventArgs e)
@@ -223,6 +229,8 @@ namespace PhysProject_Kirgof
             myLineR2yes4.Visibility = Visibility.Hidden;
             if (label2 != null) label2.Visibility = Visibility.Hidden;
             R2.IsEnabled = false;
+            Update();
+
         }
 
         private void CheckBoxR3_Checked(object sender, RoutedEventArgs e)
@@ -234,6 +242,8 @@ namespace PhysProject_Kirgof
             myLineR3yes4.Visibility = Visibility.Visible;
             if (label != null) label.Visibility = Visibility.Visible;
             R3.IsEnabled = true;
+            Update();
+
         }
 
         private void CheckBoxR3_UnChecked(object sender, RoutedEventArgs e)
@@ -245,6 +255,23 @@ namespace PhysProject_Kirgof
             myLineR3yes4.Visibility = Visibility.Hidden;
             if (label != null) label.Visibility = Visibility.Hidden;
             R3.IsEnabled = false;
+            Update();
+        }
+
+        private void Update()
+        {
+            if (ResultPanel == null || ErrorLabel == null)
+                return;
+            if (R1.IsEnabled || R2.IsEnabled || R3.IsEnabled)
+            {
+                ResultPanel.Visibility = Visibility.Visible;
+                ErrorLabel.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ResultPanel.Visibility = Visibility.Hidden;
+                ErrorLabel.Visibility = Visibility.Visible;
+            }
         }
     }
 }
