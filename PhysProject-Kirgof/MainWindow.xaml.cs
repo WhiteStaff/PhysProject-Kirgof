@@ -258,20 +258,31 @@ namespace PhysProject_Kirgof
             Update();
         }
 
+        
         private void Update()
         {
             if (ResultPanel == null || ErrorLabel == null)
                 return;
-            if (R1.IsEnabled || R2.IsEnabled || R3.IsEnabled)
-            {
-                ResultPanel.Visibility = Visibility.Visible;
-                ErrorLabel.Visibility = Visibility.Hidden;
-            }
-            else
+            if ((!R1.IsEnabled) && (!R2.IsEnabled) && (!R3.IsEnabled) && (!E1.GetLineText(0).Equals("0") || !E2.GetLineText(0).Equals("0")))
             {
                 ResultPanel.Visibility = Visibility.Hidden;
                 ErrorLabel.Visibility = Visibility.Visible;
             }
+            else
+            {
+                ResultPanel.Visibility = Visibility.Visible;
+                ErrorLabel.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void Check_E1(object sender, TextChangedEventArgs e)
+        {
+            Update();
+        }
+
+        private void Check_E2(object sender, TextChangedEventArgs e)
+        {
+            Update();
         }
     }
 }
